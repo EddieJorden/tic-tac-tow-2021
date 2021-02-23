@@ -44,10 +44,10 @@ const PlayerOtile = ({setPlayerXorO, playerXorO}) => {
 
 const EmptyPlayingSpace = ({setPlayerXorO, playerXorO, setHasBeenClicked, setLocalXorO}) => {
 
-    const handleClick = () => {
+    const handleClick = ({setPlayerXorO}) => {
         setHasBeenClicked(true)
-        {playerXorO === 'X' ? setPlayerXorO('O') : setPlayerXorO('X')}
         {playerXorO === 'X' ? setLocalXorO('O') : setLocalXorO('X')}
+        // {playerXorO === 'X' ? setPlayerXorO('O') : setPlayerXorO('X')}
     }
     
     return(
