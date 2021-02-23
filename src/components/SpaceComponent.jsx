@@ -38,17 +38,13 @@ const PlayerOtile = ({setPlayerXorO, playerXorO}) => {
     )
 
 }
-
-
-//   console.log(playerXorO)
-
 const EmptyPlayingSpace = ({setPlayerXorO, playerXorO, setHasBeenClicked, setLocalXorO}) => {
 
-    const handleClick = ({setPlayerXorO}) => {
-        setHasBeenClicked(true)
-        {playerXorO === 'X' ? setLocalXorO('O') : setLocalXorO('X')}
-        // {playerXorO === 'X' ? setPlayerXorO('O') : setPlayerXorO('X')}
-    }
+const handleClick = () => {
+    setHasBeenClicked(true)
+    {playerXorO === 'X' ? setLocalXorO('O') : setLocalXorO('X')}
+    {playerXorO === 'X' ? setPlayerXorO('O') : setPlayerXorO('X')}
+    
     
     return(
         <div
@@ -61,32 +57,34 @@ const EmptyPlayingSpace = ({setPlayerXorO, playerXorO, setHasBeenClicked, setLoc
             border: 'lightGrey',
             text: 'X'
         }}
-     onClick={handleClick}
+        onClick={handleClick}
+        
+></div>
 
-    ></div>
-
-    )
+)
 }
-
-    
-
 
 const SpaceComponent = ({playerXorO, setPlayerXorO}) => {
     const [hasBeenClicked, setHasBeenClicked] = useState(false)
     const [localXorO, setLocalXorO] = useState(null)
     
         
-    
-    
-    
-    return(
-        <div>
-            {!hasBeenClicked && <EmptyPlayingSpace setHasBeenClicked={setHasBeenClicked} setLocalXorO={setLocalXorO}/>}
-            {hasBeenClicked && localXorO === 'X' && <PlayerXtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
-            {hasBeenClicked && localXorO === 'O' && <PlayerOtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
+//   console.log(playerXorO)
 
-        </div>
-    )
+
+    
+
+
+return(
+    <div>
+        {!hasBeenClicked && <EmptyPlayingSpace setHasBeenClicked={setHasBeenClicked} setLocalXorO={setLocalXorO}/>}
+        {hasBeenClicked && localXorO === 'X' && <PlayerXtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
+        {hasBeenClicked && localXorO === 'O' && <PlayerOtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
+
+    </div>
+)
 }
+
+
 
 export default SpaceComponent;
