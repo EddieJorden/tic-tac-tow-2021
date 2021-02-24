@@ -1,12 +1,16 @@
-import React from 'react';
-import SpaceComponent from './SpaceComponent';
+// import React from 'react';
+// import SpaceComponent from './SpaceComponent';
 
-const Board = () => (
-    <div>
-        {squares.map((square, i) => (
-            <SpaceComponent/>     
-        ))}
-    </div>
-)
+// const squares = []
 
-export default Board
+// const Board = ({square, onClick}) => (
+//     <div>
+//         {squares.map((squares, i) => (
+//             <SpaceComponent key={i} value={square} onClick={() => onClick(i)} />     
+//         ))}
+//     </div>
+// )
+
+// console.log(squares)
+
+// export default Board
