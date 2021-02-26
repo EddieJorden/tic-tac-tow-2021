@@ -10,21 +10,25 @@ const TicTacToe = ({ spaces }) => {
     
 
 
-    return(
-        <div style={{display: 'flex', flexWrap: 'wrap', width: '50%'}}>
-      
-            <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
-            <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
-            <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
-            <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
-            <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
-            <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
-            <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
-            <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
-            <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
-            
-        </div>
-    )
+    // return(
+    //     <div style={{display: 'flex', flexWrap: 'wrap', width: '50%'}}>
+    //         <div>
+    //         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
+    //         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
+    //         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
+    //         </div>
+    //         <div>
+    //         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
+    //         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
+    //         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
+    //         </div>
+    //         <div>
+    //         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
+    //         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
+    //         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />
+    //         </div>
+    //     </div>
+    // )
 }
 
 export default TicTacToe;

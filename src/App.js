@@ -6,7 +6,7 @@ import SpaceComponent from './components/SpaceComponent';
 function App() {
 	return (
 		<div className="App">
-			<TicTacToe />
+			<Board />
 		</div>
 	);
 }
