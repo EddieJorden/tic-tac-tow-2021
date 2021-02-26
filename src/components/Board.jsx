@@ -7,11 +7,24 @@ const Board = ({square, onClick}) => {
 
     const [playerXorO, setPlayerXorO] = useState('X')
 
-    const SpaceComponentArray = [<SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />,]
+    const SpaceComponentArray = [
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+    ]
 
     return(
-        <div>
-        <SpaceComponentArray />
+        <div style={{
+            display: 'grid',
+            
+        }}>
+            {SpaceComponentArray}
         </div>
     // <div>
     //     {squares.map((squares, i) => (
