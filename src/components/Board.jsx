@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import SpaceComponent from './SpaceComponent';
+import TicTacToe from './TicTacToe';
 
 // const squares = []
 
 const Board = ({square, onClick}) => {
 
-    const [playerXorO, setPlayerXorO] = useState('X')
+    const [playerXorO, setPlayerXorO] = useState('O')
 
     const SpaceComponentArray = [
         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
@@ -24,6 +25,7 @@ const Board = ({square, onClick}) => {
             display: 'grid',
             
         }}>
+            {playerXorO === 'O' ? "Player X's turn" : "Player O's turn"}
             {SpaceComponentArray}
         </div>
     // <div>

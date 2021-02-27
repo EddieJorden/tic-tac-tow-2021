@@ -35,15 +35,16 @@ const PlayerOtile = ({setPlayerXorO, playerXorO}) => {
         </div>
     )
 }
-     
-const EmptyPlayingSpace = ({setPlayerXorO, playerXorO, setHasBeenClicked, setLocalXorO}) => {
 
+const EmptyPlayingSpace = ({setPlayerXorO, playerXorO, setHasBeenClicked, setLocalXorO}) => {
+    
     const handleClick = () => {
         setHasBeenClicked(true)
         {playerXorO === 'X' ? setLocalXorO('O') : setLocalXorO('X')}
         {playerXorO === 'X' ? setPlayerXorO('O') : setPlayerXorO('X')}
-    
+        
     }
+    console.log(playerXorO)
     
     return(
         <div
@@ -62,12 +63,12 @@ const EmptyPlayingSpace = ({setPlayerXorO, playerXorO, setHasBeenClicked, setLoc
     )
 }
 
-    const SpaceComponent = ({playerXorO, setPlayerXorO}) => {
+const SpaceComponent = ({playerXorO, setPlayerXorO}) => {
     const [hasBeenClicked, setHasBeenClicked] = useState(false)
     const [localXorO, setLocalXorO] = useState(null)
     
     return(
-    <div>
+        <div>
         {!hasBeenClicked && <EmptyPlayingSpace setHasBeenClicked={setHasBeenClicked} setLocalXorO={setLocalXorO} setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
         {hasBeenClicked && localXorO === 'X' && <PlayerXtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
         {hasBeenClicked && localXorO === 'O' && <PlayerOtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
@@ -77,7 +78,7 @@ const EmptyPlayingSpace = ({setPlayerXorO, playerXorO, setHasBeenClicked, setLoc
 }
 
 export default SpaceComponent;
-    
+
 
 
     
