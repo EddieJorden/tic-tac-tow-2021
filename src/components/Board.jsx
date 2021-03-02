@@ -8,27 +8,64 @@ const Board = ({square, onClick}) => {
 
     const [playerXorO, setPlayerXorO] = useState('O')
 
-    const SpaceComponentArray = [
+    const SpaceComponentArray0through2 = [
         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
-        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
-        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
-        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
-        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
-        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
-        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+
     ]
 
+    const SpaceComponentArray3through5 = [
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+
+    ]
+
+    const SpaceComponentArray6through9 = [
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+        <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
+
+    ]
+
+    // console.log(SpaceComponentArray0through2[0])
     return(
+        <div>
         <div style={{
-            display: 'grid',
+            // display: 'grid',
+
             
         }}>
             {playerXorO === 'O' ? "Player X's turn" : "Player O's turn"}
-            {SpaceComponentArray}
         </div>
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'row'
+            }}
+        >
+            {SpaceComponentArray0through2}
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row'
+                }}
+            >
+            {SpaceComponentArray3through5}
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row'
+                }}
+            >
+            {SpaceComponentArray6through9}
+            </div>
+            </div>
     // <div>
+
     //     {squares.map((squares, i) => (
     //         <SpaceComponent key={i} value={square} onClick={() => onClick(i)} />     
     //     ))}
@@ -53,5 +90,6 @@ const Board = ({square, onClick}) => {
 )}
 
 // console.log(squares)
+
 
 export default Board
