@@ -8,6 +8,8 @@ const Board = ({square, onClick}) => {
 
     const [playerXorO, setPlayerXorO] = useState('O')
 
+    // squares: Array(9).fill(null)
+
     const SpaceComponentArray0through2 = [
         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 
         <SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />, 

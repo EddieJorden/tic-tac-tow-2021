@@ -28,7 +28,8 @@ const PlayerOtile = ({setPlayerXorO, playerXorO}) => {
             height: '50px',
             width: '80px',
             border: 'lightGrey',
-            text: 'X'
+            text: 'O'
+            
         }}
         >
             O
