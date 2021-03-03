@@ -6,7 +6,9 @@ import SpaceComponent from './SpaceComponent';
 const scoreBoard = () => {
 }
 
-
+const winningAnouncement = () => {
+    
+}
 
 
 const TicTacToe = ({ spaces }) => {
