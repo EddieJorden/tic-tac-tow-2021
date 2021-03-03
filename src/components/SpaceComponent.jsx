@@ -5,12 +5,17 @@ const PlayerXtile = ({setPlayerXorO, playerXorO}) => {
         <div
         style={{
             backgroundColor: 'red',
-            cursor: 'pointer',
-            onHover: 'purple',
-            height: '50px',
-            width: '80px',
-            border: 'lightGrey',
-            text: 'X'
+            width: '10rem',
+            height: '10rem',
+            border: '1px solid black',
+            textAlign: 'center',
+            verticalAlign: 'middle',
+            lineHeight: '10rem',
+            color: 'white',
+            fontSize: '40px'
+
+
+       
         }}
         >
             X
@@ -23,12 +28,16 @@ const PlayerOtile = ({setPlayerXorO, playerXorO}) => {
         <div
         style={{
             backgroundColor: 'blue',
-            cursor: 'pointer',
-            onHover: 'purple',
-            height: '50px',
-            width: '80px',
-            border: 'lightGrey',
-            text: 'O'
+            width: '10rem',
+            height: '10rem',
+            border: '1px solid black',
+            textAlign: 'center',
+            verticalAlign: 'middle',
+            lineHeight: '10rem',
+            color: 'white',
+            fontSize: '40px'
+
+         
             
         }}
         >
@@ -52,11 +61,11 @@ const EmptyPlayingSpace = ({setPlayerXorO, playerXorO, setHasBeenClicked, setLoc
         style={{
             backgroundColor: 'grey',
             cursor: 'pointer',
-            onHover: 'purple',
-            height: '50px',
-            width: '80px',
-            border: 'lightGrey',
-            text: 'X'
+            hover: 'purple',
+            height: '10rem',
+            width: '10rem',
+            border: '1px solid black',
+          
         }}
         onClick={handleClick}
         >
