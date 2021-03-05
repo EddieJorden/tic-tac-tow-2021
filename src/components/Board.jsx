@@ -5,22 +5,30 @@ import TicTacToe from './TicTacToe';
 
 
 
-const Board = ({square, onClick, winningConditinos}) => {
+const Board = ({square, onClick}) => {
     const [playerXorO, setPlayerXorO] = useState('O')
+    const [winningConditions, setWinningConditions] = useState()
+    const [xTracker, setXTracker] = useState([])
+    const [oTracker, setOTracker] = useState([])
+    console.log(xTracker, oTracker)
    
-    const SpaceComponentArray = [        
-        <div><SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} /></div>, 
-        <div><SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} /></div>, 
-        <div><SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} /></div>, 
-        <div><SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} /></div>, 
-        <div><SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} /></div>, 
-        <div><SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} /></div>, 
-        <div><SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} /></div>, 
-        <div><SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} /></div>, 
-        <div><SpaceComponent playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} /></div>, 
-    ]
+    const spaceComponentArray = []
 
-    const winningConditions = true
+    for(let i=0; i<9; i++){
+        spaceComponentArray.push(
+            <SpaceComponent
+                playerXorO={playerXorO}
+                setPlayerXorO={setPlayerXorO}
+                index={i}
+                setXTracker={setXTracker}
+                setOTracker={setOTracker}
+                xTracker={xTracker}
+                oTracker={oTracker}
+            />
+        )
+    }
+
+    
 
     return(
         <div>
@@ -36,18 +44,13 @@ const Board = ({square, onClick, winningConditinos}) => {
                 flexWrap: 'wrap',
                 
             }}>
-                {SpaceComponentArray}
+                {spaceComponentArray}
             </div>
          
-            <div style={{color: 'white', textAlign: 'center', fontSize: '40px'}}>
-                {winningConditions === true ? 'Player X is the winner' : 'TicTacToe...'}
-            </div>
+          
        
         </div>
-            <div style={{color: 'white'}}>
-                {/* <TicTacToe WinningConditions='WinningConditions'/>
-                <WinningConditions /> */}
-            </div>
+            <TicTacToe xTracker={xTracker} oTracker={oTracker}/>
         </div>
     )
 }
