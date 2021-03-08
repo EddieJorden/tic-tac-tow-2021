@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import SpaceComponent from './SpaceComponent';
-import SpaceComponentArray from './Board'
+import  { useState } from 'react';
+// import SpaceComponent from './SpaceComponent';
+// import SpaceComponentArray from './Board'
 
 
     
@@ -32,14 +32,17 @@ import SpaceComponentArray from './Board'
 
 
 
-const TicTacToe = ({ spaces, WinningConditons }) => {
-    const [playerXorO, setPlayerXorO] = useState('O')
-    const [winningConditions, setWinningConditions] = useState(false)
+// const TicTacToe = () => {
+//     // const [playerXorO, setPlayerXorO] = useState('O')
+//     // const [winningConditions, setWinningConditions] = useState(true)
+//     // return(
+//     //     // <TicTacToe winningConditions={winningConditions} setWinningConditions={setWinningConditions}/>
+//     // )
 
-}
+// }
 
 
-export default TicTacToe;
+// export default TicTacToe;
 
 
 
