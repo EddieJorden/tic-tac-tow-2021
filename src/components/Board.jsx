@@ -45,8 +45,8 @@ console.log(spacesArray)
                 flexWrap: 'wrap',
                 
             }}>
-           </div>
            {spacesArray} 
+           </div>
             <div style={{color: 'white', textAlign: 'center', fontSize: '40px'}}>
                 {winningConditions === true ? 'Player X is the winner' : 'TicTacToe...'}
             </div>
