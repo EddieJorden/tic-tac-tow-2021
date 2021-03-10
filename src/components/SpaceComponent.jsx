@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PlayerXtile = () => {
+const PlayerXtile = (hasBeenClicked, setHasBeenClicked, localXorO, setLocalXorO) => {
     return(
         <div
         style={{
@@ -23,7 +23,7 @@ const PlayerXtile = () => {
     )
 }
      
-const PlayerOtile = () => {
+const PlayerOtile = (hasBeenClicked, setHasBeenClicked, localXorO, setLocalXorO) => {
     return(
         <div
         style={{
@@ -46,7 +46,7 @@ const PlayerOtile = () => {
     )
 }
 
-const EmptyPlayingSpace = ({setPlayerXorO, playerXorO, setHasBeenClicked, setLocalXorO}) => {
+const EmptyPlayingSpace = () => {
     
   
     
@@ -65,24 +65,24 @@ const EmptyPlayingSpace = ({setPlayerXorO, playerXorO, setHasBeenClicked, setLoc
     )
 }
 
-const SpaceComponent = ({playerXorO, setPlayerXorO, }) => {
+const SpaceComponent = ({playerXorO, setPlayerXorO}) => {
     const [hasBeenClicked, setHasBeenClicked] = useState(false)
     const [localXorO, setLocalXorO] = useState(null)
 
     const handleClick = () => {
         setHasBeenClicked(true)
-       
-        {playerXorO === 'X' && hasBeenClicked === false ? setLocalXorO('O') : setLocalXorO('X')}
-        {playerXorO === 'X' && hasBeenClicked === false ? setPlayerXorO('O') : setPlayerXorO('X')}
+        
+        {playerXorO === 'X' && !hasBeenClicked ? setLocalXorO('X') : setLocalXorO('O')}
+        {playerXorO === 'O' && hasBeenClicked === false ? setPlayerXorO('X') : setPlayerXorO('O')}
     }
         
-    
+    console.log(SpaceComponent)
+
     return(
         <div onClick={handleClick}>
-        {!hasBeenClicked && <EmptyPlayingSpace setHasBeenClicked={setHasBeenClicked} setLocalXorO={setLocalXorO} setPlayerXorO={setPlayerXorO} playerXorO={playerXorO} localXorO={setLocalXorO}/>}
-        {hasBeenClicked && localXorO === 'X' && <PlayerXtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
-        {hasBeenClicked && localXorO === 'O' && <PlayerOtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
-        
+        {hasBeenClicked === false && <EmptyPlayingSpace />}
+        {hasBeenClicked === true && localXorO === 'X' && <PlayerXtile />}
+        {hasBeenClicked === true && localXorO === 'O' && <PlayerOtile />}
 
     </div>
     )
