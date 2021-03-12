@@ -72,9 +72,19 @@ const SpaceComponent = ({playerXorO, setPlayerXorO}) => {
     const [hasBeenClicked, setHasBeenClicked] = useState(false)
 
     const handleClick = () => {
-        setHasBeenClicked(true)        
-        {playerXorO === 'X' && !hasBeenClicked ? setLocalXorO('X') : setLocalXorO('O')}
-        {playerXorO === 'O' && !hasBeenClicked ? setPlayerXorO('X') : setPlayerXorO('O')}
+        setHasBeenClicked(true);
+
+        {playerXorO === "X" && hasBeenClicked === false && (setLocalXorO("X"))}
+        {playerXorO === "X" && hasBeenClicked === false && (setPlayerXorO("O"))}
+        {playerXorO === "O" && hasBeenClicked === false && (setLocalXorO("O"))}
+        {playerXorO === "O" && hasBeenClicked === false && (setPlayerXorO("X"))}
+
+        // if (playerXorO === 'X' && hasBeenClicked === true) {
+        //     setLocalXorO(() => 'X')
+        // }
+
+        // {playerXorO === 'X' && hasBeenClicked === false? setLocalXorO('X') : setLocalXorO('X')}
+        // {playerXorO === 'O' && hasBeenClicked === false ? setLocalXorO('O') : setLocalXorO('O')}
 }
         
     console.log(SpaceComponent)
