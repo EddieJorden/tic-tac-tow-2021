@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PlayerXtile = (hasBeenClicked, setHasBeenClicked, localXorO, setLocalXorO) => {
+const PlayerXtile = () => {
     return(
         <div
         style={{
@@ -23,7 +23,7 @@ const PlayerXtile = (hasBeenClicked, setHasBeenClicked, localXorO, setLocalXorO)
     )
 }
      
-const PlayerOtile = (hasBeenClicked, setHasBeenClicked, localXorO, setLocalXorO) => {
+const PlayerOtile = () => {
     return(
         <div
         style={{
@@ -46,7 +46,7 @@ const PlayerOtile = (hasBeenClicked, setHasBeenClicked, localXorO, setLocalXorO)
     )
 }
 
-const EmptyPlayingSpace = () => {
+const EmptyPlayingSpace = (handleClick) => {
     
   
     
@@ -60,27 +60,29 @@ const EmptyPlayingSpace = () => {
                 border: '1px solid black',
           
             }}
-        >
+            
+            >
         </div>
     )
 }
 
 const SpaceComponent = ({playerXorO, setPlayerXorO}) => {
-    const [hasBeenClicked, setHasBeenClicked] = useState(false)
+    // const [hasBeenClicked, setHasBeenClicked] = useState(false)
     const [localXorO, setLocalXorO] = useState(null)
+    const [hasBeenClicked, setHasBeenClicked] = useState(false)
 
     const handleClick = () => {
-        setHasBeenClicked(true)
-        
+        setHasBeenClicked(true)        
         {playerXorO === 'X' && !hasBeenClicked ? setLocalXorO('X') : setLocalXorO('O')}
-        {playerXorO === 'O' && hasBeenClicked === false ? setPlayerXorO('X') : setPlayerXorO('O')}
-    }
+        {playerXorO === 'O' && !hasBeenClicked ? setPlayerXorO('X') : setPlayerXorO('O')}
+}
         
     console.log(SpaceComponent)
+    console.log(handleClick)
 
     return(
         <div onClick={handleClick}>
-        {hasBeenClicked === false && <EmptyPlayingSpace />}
+        {!hasBeenClicked && <EmptyPlayingSpace/>}
         {hasBeenClicked === true && localXorO === 'X' && <PlayerXtile />}
         {hasBeenClicked === true && localXorO === 'O' && <PlayerOtile />}
 
@@ -89,11 +91,3 @@ const SpaceComponent = ({playerXorO, setPlayerXorO}) => {
 }
 
 export default SpaceComponent;
-
-
-
-    
-
-
-
-
