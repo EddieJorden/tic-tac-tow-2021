@@ -87,8 +87,7 @@ const SpaceComponent = ({playerXorO, setPlayerXorO}) => {
         // {playerXorO === 'O' && hasBeenClicked === false ? setLocalXorO('O') : setLocalXorO('O')}
 }
         
-    console.log(SpaceComponent)
-    console.log(handleClick)
+    
 
     return(
         <div onClick={handleClick}>
