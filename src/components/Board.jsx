@@ -8,7 +8,7 @@ import SpaceComponent from './SpaceComponent';
 const Board = (localXorO) => {
     const [playerXorO, setPlayerXorO] = useState('X')
     const [winningConditions, setWinningConditions] = useState(false)
-
+    const [newArray] = useState(['', '', '', '', '', '', '', '', ''])
    
   
     
@@ -29,7 +29,7 @@ const Board = (localXorO) => {
             
             const winningLines = []
             for(let i = 0; i < 9; i++){
-                winningLines.push(<SpaceComponent key={i} playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />)
+                winningLines.push(<SpaceComponent key={i} index={i} playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />)
                 
             }
 
@@ -41,7 +41,7 @@ const Board = (localXorO) => {
                 
     //             for (let i = 0; i < winningLines.length; i++) {
     //     const [a,b,c] = winningLines[i];
-    //     if (localXorO[a] && localXorO[a] === localXorO[b] && localXorO[a] === localXorO[c]) {
+    //     if (newArray[a] && localXorO[a] === localXorO[b] && localXorO[a] === localXorO[c]) {
     //         setWinningConditions(true)
     //     }
     // }

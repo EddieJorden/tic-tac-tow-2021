@@ -3,12 +3,7 @@ import  { useState } from 'react';
 // import SpaceComponentArray from './Board'
 
 
-    
-
-  
-
-
-// const winningAnouncement = (playerXorO) => {
+    // const winningAnouncement = (playerXorO) => {
 //     const lines = [
 //         [0,1,2],
 //         [3,4,5],

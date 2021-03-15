@@ -71,9 +71,9 @@ const SpaceComponent = ({playerXorO, setPlayerXorO}) => {
     const [localXorO, setLocalXorO] = useState(null)
     const [hasBeenClicked, setHasBeenClicked] = useState(false)
 
-    const handleClick = () => {
+    const handleClick = (i, newArray) => {
         setHasBeenClicked(true);
-
+        {playerXorO === "X" && hasBeenClicked === false && (newArray[i].push('X'))}
         {playerXorO === "X" && hasBeenClicked === false && (setLocalXorO("X"))}
         {playerXorO === "X" && hasBeenClicked === false && (setPlayerXorO("O"))}
         {playerXorO === "O" && hasBeenClicked === false && (setLocalXorO("O"))}
