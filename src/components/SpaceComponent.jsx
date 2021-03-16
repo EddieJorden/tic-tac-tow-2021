@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {xSpacesArray} from './Board'
 
 const PlayerXtile = () => {
     return(
@@ -66,14 +67,14 @@ const EmptyPlayingSpace = (handleClick) => {
     )
 }
 
-const SpaceComponent = ({playerXorO, setPlayerXorO}) => {
+const SpaceComponent = ({playerXorO, setPlayerXorO, xSpacesArray, key}) => {
     // const [hasBeenClicked, setHasBeenClicked] = useState(false)
     const [localXorO, setLocalXorO] = useState(null)
     const [hasBeenClicked, setHasBeenClicked] = useState(false)
 
     const handleClick = (i, newArray) => {
         setHasBeenClicked(true);
-        {playerXorO === "X" && hasBeenClicked === false && (newArray[i].push('X'))}
+        {xSpacesArray.splice(i=key, 1, "X")}
         {playerXorO === "X" && hasBeenClicked === false && (setLocalXorO("X"))}
         {playerXorO === "X" && hasBeenClicked === false && (setPlayerXorO("O"))}
         {playerXorO === "O" && hasBeenClicked === false && (setLocalXorO("O"))}

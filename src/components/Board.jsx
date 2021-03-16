@@ -5,10 +5,10 @@ import SpaceComponent from './SpaceComponent';
 // import WinningAnouncement from './TicTacToe'
 
 
-const Board = (localXorO) => {
+const Board = () => {
     const [playerXorO, setPlayerXorO] = useState('X')
     const [winningConditions, setWinningConditions] = useState(false)
-    const [newArray] = useState(['', '', '', '', '', '', '', '', ''])
+    const [xSpacesArray] = useState(['', '', '', '', '', '', '', '', ''])
    
   
     
@@ -27,9 +27,9 @@ const Board = (localXorO) => {
             
             
             
-            const winningLines = []
+            const squaresArray = []
             for(let i = 0; i < 9; i++){
-                winningLines.push(<SpaceComponent key={i} index={i} playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} />)
+                squaresArray.push(<SpaceComponent key={i} index={i} playerXorO={playerXorO} setPlayerXorO={setPlayerXorO} xSpacesArray={xSpacesArray} />)
                 
             }
 
@@ -52,7 +52,8 @@ const Board = (localXorO) => {
  
 
 
-console.log(winningLines)
+console.log(squaresArray)
+console.log(xSpacesArray)
 
 
     return(
@@ -70,7 +71,7 @@ console.log(winningLines)
                 flexWrap: 'wrap',
                 
             }}>
-           {winningLines} 
+           {squaresArray} 
            </div>
             <div style={{color: 'white', textAlign: 'center', fontSize: '40px'}}>
                 {winningConditions === true ? 'Player X is the winner' : 'TicTacToe...'}
