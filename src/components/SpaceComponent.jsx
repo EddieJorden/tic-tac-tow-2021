@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
-import {xSpacesArray} from './Board'
 
 const PlayerXtile = () => {
     return(
         <div
-        style={{
-            backgroundColor: 'red',
-            width: '10rem',
-            height: '10rem',
-            border: '1px solid black',
-            textAlign: 'center',
-            verticalAlign: 'middle',
-            lineHeight: '10rem',
-            color: 'white',
-            fontSize: '40px'
-
-
-       
-        }}
+            style={{
+                backgroundColor: 'red',
+                width: '10rem',
+                height: '10rem',
+                border: '1px solid black',
+                textAlign: 'center',
+                verticalAlign: 'middle',
+                lineHeight: '10rem',
+                color: 'white',
+                fontSize: '40px'
+            }}
         >
             X
         </div>
@@ -27,20 +23,17 @@ const PlayerXtile = () => {
 const PlayerOtile = () => {
     return(
         <div
-        style={{
-            backgroundColor: 'blue',
-            width: '10rem',
-            height: '10rem',
-            border: '1px solid black',
-            textAlign: 'center',
-            verticalAlign: 'middle',
-            lineHeight: '10rem',
-            color: 'white',
-            fontSize: '40px'
-
-         
-            
-        }}
+            style={{
+                backgroundColor: 'blue',
+                width: '10rem',
+                height: '10rem',
+                border: '1px solid black',
+                textAlign: 'center',
+                verticalAlign: 'middle',
+                lineHeight: '10rem',
+                color: 'white',
+                fontSize: '40px'
+            }}
         >
             O
         </div>
@@ -48,9 +41,6 @@ const PlayerOtile = () => {
 }
 
 const EmptyPlayingSpace = (handleClick) => {
-    
-  
-    
     return(
         <div
             style={{
@@ -59,44 +49,39 @@ const EmptyPlayingSpace = (handleClick) => {
                 height: '10rem',
                 width: '10rem',
                 border: '1px solid black',
-          
             }}
-            
-            >
+        >
         </div>
     )
 }
-
-const SpaceComponent = ({playerXorO, setPlayerXorO, xSpacesArray, key}) => {
-    // const [hasBeenClicked, setHasBeenClicked] = useState(false)
+ 
+const SpaceComponent = ({
+    playerXorO, 
+    setPlayerXorO, 
+    xSpacesArray, 
+    squaresArray, 
+    index
+}) => {
     const [localXorO, setLocalXorO] = useState(null)
-    const [hasBeenClicked, setHasBeenClicked] = useState(false)
-
-    const handleClick = (i, newArray) => {
-        setHasBeenClicked(true);
-        {xSpacesArray.splice(i=key, 1, "X")}
-        {playerXorO === "X" && hasBeenClicked === false && (setLocalXorO("X"))}
-        {playerXorO === "X" && hasBeenClicked === false && (setPlayerXorO("O"))}
-        {playerXorO === "O" && hasBeenClicked === false && (setLocalXorO("O"))}
-        {playerXorO === "O" && hasBeenClicked === false && (setPlayerXorO("X"))}
-
-        // if (playerXorO === 'X' && hasBeenClicked === true) {
-        //     setLocalXorO(() => 'X')
-        // }
-
-        // {playerXorO === 'X' && hasBeenClicked === false? setLocalXorO('X') : setLocalXorO('X')}
-        // {playerXorO === 'O' && hasBeenClicked === false ? setLocalXorO('O') : setLocalXorO('O')}
-}
-        
+    const [hasBeenClicked, setHasBeenClicked] = useState(false)  
+    // const [x] = squaresArray[i];
     
+    const handleClick = () => {
+        setHasBeenClicked(true);
+        playerXorO === "X" && xSpacesArray.splice(xSpacesArray[index] = "X", 1, "0")
+        playerXorO === "O" && xSpacesArray.splice(xSpacesArray[index] = "O", 1, "X")
+        playerXorO === "X" && hasBeenClicked === false && setLocalXorO("X")
+        playerXorO === "X" && hasBeenClicked === false && setPlayerXorO("O")
+        playerXorO === "O" && hasBeenClicked === false && setLocalXorO("O")
+        playerXorO === "O" && hasBeenClicked === false && setPlayerXorO("X")
+    }
 
     return(
         <div onClick={handleClick}>
-        {!hasBeenClicked && <EmptyPlayingSpace/>}
-        {hasBeenClicked === true && localXorO === 'X' && <PlayerXtile />}
-        {hasBeenClicked === true && localXorO === 'O' && <PlayerOtile />}
-
-    </div>
+            {!hasBeenClicked && <EmptyPlayingSpace/>}
+            {hasBeenClicked === true && localXorO === 'X' && <PlayerXtile />}
+            {hasBeenClicked === true && localXorO === 'O' && <PlayerOtile />}
+        </div>
     )
 }
 
