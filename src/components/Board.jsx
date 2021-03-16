@@ -7,8 +7,9 @@ import SpaceComponent from './SpaceComponent';
 
 const Board = () => {
     const [playerXorO, setPlayerXorO] = useState('X')
-    const [winningConditions] = useState(false)
-    const [xSpacesArray] = useState(['', '', '', '', '', '', '', '', ''])           
+    const [winningConditions, setWinningConditions] = useState(false)
+    const [xSpacesArray] = useState(['', '', '', '', '', '', '', '', ''])
+
     const squaresArray = []
         for(let i = 0; i < 9; i++){
             squaresArray.push(
@@ -22,6 +23,8 @@ const Board = () => {
             )    
         }
          // Const [board,setBoard] = useState(Array(9).fill(null))
+
+        xSpacesArray[0] === "O" && setWinningConditions(true)
 
 console.log(squaresArray)
 console.log(xSpacesArray)
