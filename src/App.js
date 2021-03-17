@@ -1,8 +1,8 @@
 import React from 'react';
-import TicTacToe from './components/TicTacToe';
+// import TicTacToe from './components/TicTacToe';
 import Board from './components/Board';
-import SpaceComponent from './components/SpaceComponent';
-import playerTurn from './components/TicTacToe';
+// import SpaceComponent from './components/SpaceComponent';
+// import playerTurn from './components/TicTacToe';
 
 function App() {
 	return (
