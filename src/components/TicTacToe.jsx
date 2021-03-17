@@ -1,4 +1,4 @@
- working+array.splice+for+winning+logic
+
 // import  { useState } from 'react';
 // import SpaceComponent from './SpaceComponent';
 // import SpaceComponentArray from './Board'
@@ -18,13 +18,6 @@
 
 import React, { useState } from 'react';
 
-
-
-    
-
-  
-
-
 // const winningAnouncement = (playerXorO) => {
     const lines = [
         [0,1,2],
@@ -36,7 +29,6 @@ import React, { useState } from 'react';
         [0,4,8],
         [2,4,6],
     ];
- master
 //     return('yo')
   
 //     for (let i = 0; i < lines.length; i++) {
@@ -50,7 +42,6 @@ import React, { useState } from 'react';
 
 
 
- working+array.splice+for+winning+logic
 // const TicTacToe = () => {
 //     // const [playerXorO, setPlayerXorO] = useState('O')
 //     // const [winningConditions, setWinningConditions] = useState(true)
@@ -79,12 +70,9 @@ const TicTacToe = ({ oTracker, xTracker }) => {
     </div>
     )
 }
-    
-
- master
 
 
-// export default TicTacToe;
+export default TicTacToe;
 
 
 
