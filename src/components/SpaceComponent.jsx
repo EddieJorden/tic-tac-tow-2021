@@ -40,18 +40,6 @@ const PlayerOtile = () => {
     )
 }
 
-
-// const EmptyPlayingSpace = (handleClick) => {
-//     return(
-//         <div
-//             style={{
-//                 backgroundColor: 'grey',
-//                 cursor: 'pointer',            
-//                 height: '10rem',
-//                 width: '10rem',
-//                 border: '1px solid black',
-//             }}
-
 const EmptyPlayingSpace = () => {
     return(
         <div
@@ -62,16 +50,12 @@ const EmptyPlayingSpace = () => {
             height: '10rem',
             width: '10rem',
             border: '1px solid black',
-          
         }}
-        
-
         >
         </div>
     )
 }
 
- 
 const SpaceComponent = ({
     playerXorO, 
     setPlayerXorO, 
@@ -81,7 +65,6 @@ const SpaceComponent = ({
 }) => {
     const [localXorO, setLocalXorO] = useState(null)
     const [hasBeenClicked, setHasBeenClicked] = useState(false)  
-    // const [x] = squaresArray[i];
     
     const handleClick = () => {
         setHasBeenClicked(true);
@@ -93,28 +76,6 @@ const SpaceComponent = ({
         playerXorO === "O" && hasBeenClicked === false && setPlayerXorO("X")
     }
 
-   
-// const SpaceComponent = ({playerXorO, setPlayerXorO, setWinningConditions, index, setOTracker, setXTracker, oTracker, xTracker}) => {
-//     const [hasBeenClicked, setHasBeenClicked] = useState(false)
-//     const [localXorO, setLocalXorO] = useState(null)
-     
-    // const handleClick = () => {
-    //     setHasBeenClicked(true);
-    //     playerXorO === 'X' ? setLocalXorO('O') : setLocalXorO('X');
-    //     playerXorO === 'X' ? setPlayerXorO('O') : setPlayerXorO('X');
-    //     playerXorO === 'O' ? setXTracker([...xTracker, index]) : setOTracker([...oTracker, index])
-
-    // }
-
-    
-    
-//     return(
-//         <div onClick={handleClick}>
-//         {!hasBeenClicked && <EmptyPlayingSpace />}
-//         {hasBeenClicked && localXorO === 'X' && <PlayerXtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
-//         {hasBeenClicked && localXorO === 'O' && <PlayerOtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
-//  master
-
     return(
         <div onClick={handleClick}>
             {!hasBeenClicked && <EmptyPlayingSpace/>}
@@ -123,8 +84,6 @@ const SpaceComponent = ({
         </div>
     )
 }
-
-
 
 export default SpaceComponent;
 
