@@ -40,17 +40,17 @@ const PlayerOtile = () => {
     )
 }
 
- working+array.splice+for+winning+logic
-const EmptyPlayingSpace = (handleClick) => {
-    return(
-        <div
-            style={{
-                backgroundColor: 'grey',
-                cursor: 'pointer',            
-                height: '10rem',
-                width: '10rem',
-                border: '1px solid black',
-            }}
+
+// const EmptyPlayingSpace = (handleClick) => {
+//     return(
+//         <div
+//             style={{
+//                 backgroundColor: 'grey',
+//                 cursor: 'pointer',            
+//                 height: '10rem',
+//                 width: '10rem',
+//                 border: '1px solid black',
+//             }}
 
 const EmptyPlayingSpace = () => {
     return(
@@ -65,12 +65,12 @@ const EmptyPlayingSpace = () => {
           
         }}
         
-master
+
         >
         </div>
     )
 }
- working+array.splice+for+winning+logic
+
  
 const SpaceComponent = ({
     playerXorO, 
@@ -94,26 +94,26 @@ const SpaceComponent = ({
     }
 
    
-const SpaceComponent = ({playerXorO, setPlayerXorO, setWinningConditions, index, setOTracker, setXTracker, oTracker, xTracker}) => {
-    const [hasBeenClicked, setHasBeenClicked] = useState(false)
-    const [localXorO, setLocalXorO] = useState(null)
+// const SpaceComponent = ({playerXorO, setPlayerXorO, setWinningConditions, index, setOTracker, setXTracker, oTracker, xTracker}) => {
+//     const [hasBeenClicked, setHasBeenClicked] = useState(false)
+//     const [localXorO, setLocalXorO] = useState(null)
      
-    const handleClick = () => {
-        setHasBeenClicked(true);
-        playerXorO === 'X' ? setLocalXorO('O') : setLocalXorO('X');
-        playerXorO === 'X' ? setPlayerXorO('O') : setPlayerXorO('X');
-        playerXorO === 'O' ? setXTracker([...xTracker, index]) : setOTracker([...oTracker, index])
+    // const handleClick = () => {
+    //     setHasBeenClicked(true);
+    //     playerXorO === 'X' ? setLocalXorO('O') : setLocalXorO('X');
+    //     playerXorO === 'X' ? setPlayerXorO('O') : setPlayerXorO('X');
+    //     playerXorO === 'O' ? setXTracker([...xTracker, index]) : setOTracker([...oTracker, index])
 
-    }
+    // }
 
     
     
-    return(
-        <div onClick={handleClick}>
-        {!hasBeenClicked && <EmptyPlayingSpace />}
-        {hasBeenClicked && localXorO === 'X' && <PlayerXtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
-        {hasBeenClicked && localXorO === 'O' && <PlayerOtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
- master
+//     return(
+//         <div onClick={handleClick}>
+//         {!hasBeenClicked && <EmptyPlayingSpace />}
+//         {hasBeenClicked && localXorO === 'X' && <PlayerXtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
+//         {hasBeenClicked && localXorO === 'O' && <PlayerOtile setPlayerXorO={setPlayerXorO} playerXorO={playerXorO}/>}
+//  master
 
     return(
         <div onClick={handleClick}>
@@ -124,22 +124,7 @@ const SpaceComponent = ({playerXorO, setPlayerXorO, setWinningConditions, index,
     )
 }
 
- working+array.splice+for+winning+logic
+
+
 export default SpaceComponent;
 
-export default SpaceComponent;
-   
-        
-    
-  
-    
-
-
-
-
-    
-
-
-
-
- master
