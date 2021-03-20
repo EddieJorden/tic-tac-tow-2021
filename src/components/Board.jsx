@@ -4,7 +4,7 @@ import SpaceComponent from './SpaceComponent';
 const Board = () => {
     const [playerXorO, setPlayerXorO] = useState('X')
     const [winningConditions, setWinningConditions] = useState(false)
-    const [xSpacesArray] = useState(['', '', '', '', '', '', '', '', '', ])
+    const [spacesArray] = useState(['', '', '', '', '', '', '', '', '', ])
 
     const calculateWinner = (xSpacesArray) => {
         const lines = [
@@ -21,8 +21,8 @@ const Board = () => {
     
         for (let i = 0; i < lines.length; i++) {
             const [a, b, c] = lines[i];
-            if (xSpacesArray[a] && xSpacesArray[b] === xSpacesArray[b] && xSpacesArray[a] === xSpacesArray[c]) {
-                return xSpacesArray[a];
+            if (spacesArray[a] && spacesArray[b] === spacesArray[b] && spacesArray[a] === spacesArray[c]) {
+                return spacesArray[a];
             }
         }
         return null;
@@ -37,13 +37,13 @@ const Board = () => {
                     index={i} 
                     playerXorO={playerXorO} 
                     setPlayerXorO={setPlayerXorO}
-                    xSpacesArray={xSpacesArray}
+                    spacesArray={spacesArray}
                 />
             )    
         }
 
 console.log(squaresArray)
-console.log(xSpacesArray)
+console.log(spacesArray)
 
     return(       
             <div>
