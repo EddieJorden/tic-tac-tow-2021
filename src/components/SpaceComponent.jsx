@@ -59,7 +59,8 @@ const EmptyPlayingSpace = () => {
 const SpaceComponent = ({
     playerXorO, 
     setPlayerXorO, 
-    xSpacesArray, 
+    xSpacesArray,
+    oSpacesArray, 
     squaresArray, 
     index
 }) => {
@@ -68,8 +69,8 @@ const SpaceComponent = ({
     
     const handleClick = () => {
         setHasBeenClicked(true);
-        playerXorO === "X" && xSpacesArray.splice(xSpacesArray[index] = "X", 1, "X")
-        playerXorO === "O" && xSpacesArray.splice(xSpacesArray[index] = "O", 1, "X")
+        playerXorO === "X" && xSpacesArray.splice(xSpacesArray[index] = index, 1, 'X')
+        playerXorO === "O" && oSpacesArray.splice(oSpacesArray[index] = index, 1, "O")
         playerXorO === "X" && hasBeenClicked === false && setLocalXorO("X")
         playerXorO === "X" && hasBeenClicked === false && setPlayerXorO("O")
         playerXorO === "O" && hasBeenClicked === false && setLocalXorO("O")
