@@ -45,10 +45,13 @@ const Board = () => {
     //         setWinningConditions(true)
     //     }
     // }
+    //     const calculateWinner = () => {
+    //         if(xSpacesArray.indexOf("X") === 0){
+    //             setWinningConditions(true)
+    //         }
+    // }  
 
-    const calculateWinner = xSpacesArray.some(space => space.true)
-
-   
+    // const calculateWinner = xSpacesArray.some(el => el.true)
 
     const squaresArray = []
         for(let i = 0; i < 9; i++){
@@ -60,13 +63,14 @@ const Board = () => {
                     setPlayerXorO={setPlayerXorO}
                     xSpacesArray={xSpacesArray}
                     oSpacesArray={oSpacesArray}
+                    setWinningConditions={setWinningConditions}
                 />
             )    
         }
         
-
 console.log(squaresArray)
 console.log(xSpacesArray)
+console.log(xSpacesArray.indexOf("X"))
 console.log(oSpacesArray)
 console.log(winningConditions)
 
@@ -91,7 +95,5 @@ console.log(winningConditions)
             </div>        
     )
 }
-
-
 
 export default Board
