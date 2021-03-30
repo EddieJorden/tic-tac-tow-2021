@@ -59,21 +59,29 @@ const EmptyPlayingSpace = () => {
 const SpaceComponent = ({
     playerXorO, 
     setPlayerXorO, 
-    xSpacesArray, 
+    xSpacesArray,
+    oSpacesArray, 
     squaresArray, 
-    index
+    index,
+    setWinningConditions
 }) => {
     const [localXorO, setLocalXorO] = useState(null)
     const [hasBeenClicked, setHasBeenClicked] = useState(false)  
     
     const handleClick = () => {
         setHasBeenClicked(true);
-        playerXorO === "X" && xSpacesArray.splice(xSpacesArray[index] = "X", 1, "X")
-        playerXorO === "O" && xSpacesArray.splice(xSpacesArray[index] = "O", 1, "X")
+        playerXorO === "X" && xSpacesArray.splice(xSpacesArray[index] = index, 1, 'X')
+        playerXorO === "O" && oSpacesArray.splice(oSpacesArray[index] = index, 1, "O")
         playerXorO === "X" && hasBeenClicked === false && setLocalXorO("X")
         playerXorO === "X" && hasBeenClicked === false && setPlayerXorO("O")
         playerXorO === "O" && hasBeenClicked === false && setLocalXorO("O")
         playerXorO === "O" && hasBeenClicked === false && setPlayerXorO("X")
+
+        // for(let x = 0; x < xSpacesArray.length; x++){
+        // if(xSpacesArray.indexOf("X") === 0 && xSpacesArray.indexOf("X") === 1 && xSpacesArray.indexOf("X") === 2){
+        //  setWinningConditions(true)
+        // }}
+
     }
 
     return(
